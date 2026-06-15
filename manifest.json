@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "FocusYT",
+  "version": "1.0.0",
+  "description": "Block YouTube distractions. Study channels only in focus mode.",
+  "permissions": ["storage", "alarms", "tabs", "notifications"],
+  "host_permissions": ["*://*.youtube.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "FocusYT"
+  },
+  "options_page": "options.html"
+}

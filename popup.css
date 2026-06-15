@@ -1,0 +1,199 @@
+/* ── FocusYT Popup ───────────────────────────────── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  width: 300px;
+  background: #0a0a0a;
+  color: #fff;
+  font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+  font-size: 13px;
+}
+
+#app { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+
+/* ── Header ─────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #1c1c1c;
+}
+
+.logo { font-size: 26px; }
+
+.brand { font-size: 18px; font-weight: 700; }
+.brand-sub { font-size: 11px; color: #555; }
+
+.gear-btn {
+  margin-left: auto;
+  background: none;
+  border: 1px solid #222;
+  color: #666;
+  border-radius: 8px;
+  padding: 6px 9px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.15s;
+}
+.gear-btn:hover { background: #1a1a1a; color: #fff; border-color: #444; }
+
+/* ── Mode card ──────────────────────────────────── */
+.mode-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid #1e1e1e;
+  transition: all 0.3s;
+}
+
+.mode-study  { background: #1a0000; border-color: #330000; }
+.mode-leisure{ background: #001a08; border-color: #003018; }
+.mode-capped { background: #1a1000; border-color: #332000; }
+
+.mode-title  { font-size: 14px; font-weight: 700; }
+.mode-desc   { font-size: 11px; color: #666; margin-top: 3px; }
+
+/* ── Toggle switch ──────────────────────────────── */
+.toggle input { display: none; }
+
+.track {
+  display: block;
+  width: 46px;
+  height: 26px;
+  background: #222;
+  border-radius: 13px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+.track::after {
+  content: '';
+  position: absolute;
+  width: 20px; height: 20px;
+  background: #666;
+  border-radius: 50%;
+  top: 3px; left: 3px;
+  transition: transform 0.25s, background 0.25s;
+}
+input:checked + .track { background: #ff0000; }
+input:checked + .track::after { transform: translateX(20px); background: #fff; }
+
+/* ── Usage ──────────────────────────────────────── */
+.usage-card {
+  background: #111;
+  border: 1px solid #1c1c1c;
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.usage-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.usage-label { color: #666; }
+.usage-val { font-weight: 700; font-size: 13px; }
+
+.bar-bg {
+  height: 6px; background: #1e1e1e; border-radius: 3px; overflow: hidden;
+}
+.bar-fill { height: 100%; border-radius: 3px; transition: width 0.5s, background 0.5s; min-width: 2px; }
+
+/* ── Session card ───────────────────────────────── */
+.session-card {
+  background: #0d0d1f;
+  border: 1px solid #1a1a3a;
+  border-radius: 14px;
+  padding: 12px 16px;
+}
+
+.session-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.session-label { color: #555; font-size: 12px; }
+.session-time { font-size: 18px; font-weight: 700; font-variant-numeric: tabular-nums; color: #8888ff; }
+
+.btn-end {
+  width: 100%;
+  padding: 8px;
+  background: #1a0808;
+  border: 1px solid #3a1111;
+  color: #ff6666;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+.btn-end:hover { background: #2a1111; }
+
+/* ── Channel row ────────────────────────────────── */
+.info-row {
+  font-size: 11px;
+  color: #444;
+  text-align: center;
+  padding: 4px 0 2px;
+  line-height: 1.4;
+}
+
+/* ── PIN backdrop ───────────────────────────────── */
+.pin-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.pin-box {
+  background: #141414;
+  border: 1px solid #252525;
+  border-radius: 20px;
+  padding: 24px 20px;
+  width: 260px;
+  text-align: center;
+}
+
+.pin-title { font-size: 14px; font-weight: 700; margin-bottom: 20px; }
+
+.pin-dots {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.pin-dots span {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: #252525;
+  border: 1.5px solid #333;
+  transition: all 0.15s;
+}
+
+.pin-dots span.filled { background: #ff0000; border-color: #ff0000; }
+
+.pin-numpad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.pin-key {
+  background: #1c1c1c;
+  border: 1px solid #252525;
+  color: #fff;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.12s;
+  line-height: 1;
+}
+.pin-key:hover { background: #252525; transform: scale(0.96); }
+.pin-key:active { background: #ff0000; border-color: #ff0000; }
+
+.pin-cancel { color: #ff6666; }
+.pin-del    { color: #888; }
+
+.pin-err { font-size: 12px; color: #ff4444; margin-top: 12px; min-height: 16px; }

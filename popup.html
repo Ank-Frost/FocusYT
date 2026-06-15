@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FocusYT</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- Header -->
+    <div class="header">
+      <span class="logo">🎯</span>
+      <div>
+        <div class="brand">FocusYT</div>
+        <div class="brand-sub" id="dateStr"></div>
+      </div>
+      <button class="gear-btn" id="btnSettings" title="Settings">⚙</button>
+    </div>
+
+    <!-- Mode card -->
+    <div class="mode-card" id="modeCard">
+      <div class="mode-left">
+        <div class="mode-title" id="modeTitle">Loading…</div>
+        <div class="mode-desc" id="modeDesc"></div>
+      </div>
+      <label class="toggle" id="toggleWrap">
+        <input type="checkbox" id="studySwitch">
+        <span class="track"></span>
+      </label>
+    </div>
+
+    <!-- Usage bar -->
+    <div class="usage-card">
+      <div class="usage-row">
+        <span class="usage-label">Leisure time today</span>
+        <span class="usage-val" id="usageTxt">—</span>
+      </div>
+      <div class="bar-bg">
+        <div class="bar-fill" id="barFill"></div>
+      </div>
+    </div>
+
+    <!-- Active session -->
+    <div class="session-card" id="sessionCard" style="display:none">
+      <div class="session-top">
+        <span class="session-label">⏱ Active session</span>
+        <span class="session-time" id="sessionTime">—</span>
+      </div>
+      <button class="btn-end" id="btnEnd">End Session</button>
+    </div>
+
+    <!-- Study channels count -->
+    <div class="info-row" id="chRow"></div>
+
+  </div>
+
+  <!-- PIN modal -->
+  <div class="pin-backdrop" id="pinBackdrop" style="display:none">
+    <div class="pin-box">
+      <div class="pin-title" id="pinTitle">Enter PIN</div>
+      <div class="pin-dots" id="pinDots">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="pin-numpad">
+        <button class="pin-key" data-v="1">1</button>
+        <button class="pin-key" data-v="2">2</button>
+        <button class="pin-key" data-v="3">3</button>
+        <button class="pin-key" data-v="4">4</button>
+        <button class="pin-key" data-v="5">5</button>
+        <button class="pin-key" data-v="6">6</button>
+        <button class="pin-key" data-v="7">7</button>
+        <button class="pin-key" data-v="8">8</button>
+        <button class="pin-key" data-v="9">9</button>
+        <button class="pin-key pin-cancel" id="pinCancel">✕</button>
+        <button class="pin-key" data-v="0">0</button>
+        <button class="pin-key pin-del" id="pinDel">⌫</button>
+      </div>
+      <div class="pin-err" id="pinErr"></div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

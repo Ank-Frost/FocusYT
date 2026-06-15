@@ -1,0 +1,282 @@
+/* ── FocusYT Content Styles ─────────────────────── */
+
+/* ── Full-screen overlay ─────────────────────────── */
+#fyt-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(0, 0, 0, 0.93) !important;
+  z-index: 2147483647 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: 'YouTube Sans', 'Roboto', -apple-system, sans-serif !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+.fyt-modal {
+  background: #181818;
+  border: 1px solid #2a2a2a;
+  border-radius: 24px;
+  padding: 48px 52px;
+  text-align: center;
+  max-width: 460px;
+  width: calc(100% - 40px);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
+  animation: fyt-pop 0.25s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+@keyframes fyt-pop {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.fyt-modal-icon {
+  font-size: 60px;
+  display: block;
+  margin-bottom: 18px;
+  line-height: 1;
+}
+
+.fyt-modal h2 {
+  color: #fff;
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+.fyt-modal p {
+  color: #999;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 0 28px;
+}
+
+.fyt-modal p strong { color: #fff; }
+
+.fyt-remaining-hint {
+  color: #666 !important;
+  font-size: 13px !important;
+  margin-bottom: 20px !important;
+}
+.fyt-remaining-hint strong { color: #aaa !important; }
+
+/* ── Buttons ─────────────────────────────────────── */
+.fyt-btns {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.fyt-btn {
+  padding: 12px 26px;
+  border-radius: 100px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s;
+  letter-spacing: 0.2px;
+}
+
+.fyt-btn-red   { background: #ff0000; color: #fff; }
+.fyt-btn-red:hover { background: #cc0000; }
+
+.fyt-btn-green { background: #00c853; color: #fff; }
+.fyt-btn-green:hover { background: #00a844; }
+
+.fyt-btn-ghost {
+  background: transparent;
+  color: #888;
+  border: 1px solid #333;
+}
+.fyt-btn-ghost:hover { background: #222; color: #fff; border-color: #555; }
+
+/* ── Session time grid ───────────────────────────── */
+.fyt-time-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.fyt-time-btn {
+  background: #202020;
+  border: 1.5px solid #333;
+  color: #fff;
+  border-radius: 14px;
+  padding: 18px 10px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.fyt-time-btn:hover {
+  background: #ff0000;
+  border-color: #ff0000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255,0,0,0.35);
+}
+
+/* ── Timer widget ────────────────────────────────── */
+#fyt-timer {
+  position: fixed !important;
+  bottom: 72px !important;
+  right: 20px !important;
+  z-index: 99999 !important;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.fyt-timer-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(16, 16, 16, 0.96);
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  padding: 10px 14px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+  animation: fyt-slidein 0.3s ease;
+}
+
+@keyframes fyt-slidein {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fyt-timer-label {
+  color: #666;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+}
+
+.fyt-timer-val {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  min-width: 44px;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+.fyt-timer-x {
+  background: none;
+  border: none;
+  color: #444;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.15s;
+}
+.fyt-timer-x:hover { color: #ff4444; }
+
+/* ── Study badge ─────────────────────────────────── */
+#fyt-badge {
+  position: fixed !important;
+  top: 68px !important;
+  right: 20px !important;
+  background: #00c853;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 100px;
+  z-index: 99999 !important;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 4px 16px rgba(0,200,83,0.4);
+  animation: fyt-fadein 0.3s ease, fyt-fadeout 0.4s ease 2.6s forwards;
+}
+
+@keyframes fyt-fadein  { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fyt-fadeout { from { opacity:1; } to { opacity:0; } }
+
+/* ── Home banner ─────────────────────────────────── */
+#fyt-home-banner {
+  width: 100%;
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', -apple-system, sans-serif;
+}
+
+.fyt-home-inner {
+  text-align: center;
+  max-width: 580px;
+  padding: 32px 24px;
+  width: 100%;
+}
+
+.fyt-home-hero { font-size: 72px; margin-bottom: 16px; }
+
+.fyt-home-title {
+  color: #fff;
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.fyt-home-sub {
+  color: #666;
+  font-size: 16px;
+  margin: 0 0 28px;
+}
+
+.fyt-home-stats {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.fyt-tag {
+  background: #1e1e1e;
+  border: 1px solid #2a2a2a;
+  color: #bbb;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 16px;
+  border-radius: 100px;
+}
+
+.fyt-tag-study   { border-color: #ff4444; color: #ff8888; background: #200; }
+.fyt-tag-leisure { border-color: #00c853; color: #00c853; background: #001a0e; }
+.fyt-tag-capped  { border-color: #ffaa00; color: #ffaa00; background: #1a1000; }
+
+.fyt-home-bar {
+  width: 100%;
+  height: 5px;
+  background: #222;
+  border-radius: 3px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.fyt-home-bar-fill { height: 100%; border-radius: 3px; transition: width 0.5s; }
+
+.fyt-home-channels { margin-top: 28px; }
+
+.fyt-hint { color: #555; font-size: 13px; }
+
+.fyt-pills { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+
+.fyt-pill {
+  background: #111;
+  border: 1px solid #2a2a4a;
+  color: #8888cc;
+  font-size: 13px;
+  padding: 6px 16px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.fyt-pill:hover { background: #1a1a3a; color: #aaaaff; }

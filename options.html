@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FocusYT — Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+
+  <!-- PIN gate -->
+  <div id="pinGate" class="gate-screen">
+    <div class="gate-box">
+      <div class="gate-logo">🎯</div>
+      <h1 class="gate-title">FocusYT Settings</h1>
+      <p class="gate-sub">Enter your PIN to access settings</p>
+      <p class="gate-default">Default PIN: <strong>1234</strong></p>
+      <input type="password" id="gatePin" class="gate-input" placeholder="Enter PIN" maxlength="8" autofocus>
+      <button class="btn-primary" id="gateBtn">Unlock</button>
+      <div class="gate-err" id="gateErr"></div>
+    </div>
+  </div>
+
+  <!-- Settings (hidden until PIN unlocked) -->
+  <div id="settingsPage" style="display:none">
+
+    <div class="top-bar">
+      <span class="top-logo">🎯 FocusYT</span>
+      <span class="top-sub">Settings</span>
+    </div>
+
+    <div class="content">
+
+      <!-- ── Daily Cap ──────────────────────────── -->
+      <section class="card">
+        <h2 class="card-title">⏱ Daily Leisure Cap</h2>
+        <p class="card-sub">Maximum non-study YouTube time per day. After this, only study channels work.</p>
+        <div class="row-input">
+          <input type="number" id="capInput" min="5" max="480" step="5" class="num-input" placeholder="60">
+          <span class="unit-label">minutes</span>
+          <button class="btn-primary sm" id="btnSaveCap">Save</button>
+        </div>
+        <div class="cap-presets">
+          <button class="preset-btn" onclick="setCap(30)">30 min</button>
+          <button class="preset-btn" onclick="setCap(60)">1 hr</button>
+          <button class="preset-btn" onclick="setCap(90)">1.5 hr</button>
+          <button class="preset-btn" onclick="setCap(120)">2 hr</button>
+        </div>
+        <div class="save-msg" id="capMsg"></div>
+      </section>
+
+      <!-- ── Study Channels ────────────────────── -->
+      <section class="card">
+        <h2 class="card-title">📚 Study Channels</h2>
+        <p class="card-sub">Videos from these channels bypass all restrictions. Add a channel by visiting it on YouTube — FocusYT will prompt you. Or add manually below.</p>
+
+        <div class="channel-list" id="channelList">
+          <div class="loading">Loading…</div>
+        </div>
+
+        <div class="manual-add">
+          <p class="manual-label">Add manually</p>
+          <div class="manual-row">
+            <input type="text" id="manualUrl" class="text-input" placeholder="https://youtube.com/@channelname  or  /@channelname">
+            <button class="btn-primary sm" id="btnAddManual">Add</button>
+          </div>
+          <div class="save-msg" id="addMsg"></div>
+        </div>
+      </section>
+
+      <!-- ── Change PIN ─────────────────────────── -->
+      <section class="card">
+        <h2 class="card-title">🔐 Change PIN</h2>
+        <p class="card-sub">PIN is required to turn off Study Mode and access these settings.</p>
+        <div class="pin-form">
+          <input type="password" id="newPin1" class="text-input" placeholder="New PIN (4–8 digits)" maxlength="8">
+          <input type="password" id="newPin2" class="text-input" placeholder="Confirm new PIN" maxlength="8">
+          <button class="btn-primary sm" id="btnChangePin">Change PIN</button>
+        </div>
+        <div class="save-msg" id="pinMsg"></div>
+      </section>
+
+      <!-- ── Reset ─────────────────────────────── -->
+      <section class="card card-danger">
+        <h2 class="card-title">🔄 Reset Daily Usage</h2>
+        <p class="card-sub">Manually reset today's leisure time counter. Use sparingly.</p>
+        <button class="btn-danger" id="btnReset">Reset Today's Usage</button>
+        <div class="save-msg" id="resetMsg"></div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+/* ── FocusYT Options Page ────────────────────────── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #0a0a0a;
+  color: #fff;
+  font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+  font-size: 14px;
+  min-height: 100vh;
+}
+
+/* ── PIN Gate ───────────────────────────────────── */
+.gate-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
+}
+
+.gate-box {
+  background: #111;
+  border: 1px solid #1e1e1e;
+  border-radius: 24px;
+  padding: 48px 40px;
+  width: 380px;
+  text-align: center;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+}
+
+.gate-logo { font-size: 52px; margin-bottom: 16px; }
+.gate-title { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+.gate-sub   { color: #666; margin-bottom: 6px; }
+.gate-default { color: #444; font-size: 12px; margin-bottom: 24px; }
+.gate-default strong { color: #666; }
+
+.gate-input {
+  width: 100%;
+  background: #181818;
+  border: 1.5px solid #252525;
+  color: #fff;
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 18px;
+  letter-spacing: 6px;
+  text-align: center;
+  margin-bottom: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.gate-input:focus { border-color: #ff0000; }
+
+.gate-err {
+  font-size: 13px;
+  color: #ff4444;
+  margin-top: 10px;
+  min-height: 18px;
+}
+
+/* ── Top bar ────────────────────────────────────── */
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 32px;
+  background: #0f0f0f;
+  border-bottom: 1px solid #1a1a1a;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.top-logo { font-size: 18px; font-weight: 700; }
+.top-sub  { color: #555; font-size: 14px; }
+
+/* ── Content ────────────────────────────────────── */
+.content {
+  max-width: 680px;
+  margin: 32px auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Cards ──────────────────────────────────────── */
+.card {
+  background: #111;
+  border: 1px solid #1c1c1c;
+  border-radius: 20px;
+  padding: 28px 28px;
+}
+
+.card-danger { border-color: #2a1010; background: #110808; }
+
+.card-title {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.card-sub {
+  color: #555;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* ── Row inputs ─────────────────────────────────── */
+.row-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.num-input {
+  width: 90px;
+  background: #181818;
+  border: 1.5px solid #252525;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 16px;
+  font-weight: 700;
+  outline: none;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+.num-input:focus { border-color: #ff0000; }
+
+.unit-label { color: #555; font-size: 13px; flex: 1; }
+
+/* ── Preset buttons ─────────────────────────────── */
+.cap-presets {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.preset-btn {
+  background: #181818;
+  border: 1px solid #252525;
+  color: #888;
+  padding: 7px 16px;
+  border-radius: 100px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.preset-btn:hover { background: #222; color: #fff; border-color: #444; }
+
+/* ── Channel list ───────────────────────────────── */
+.channel-list {
+  border: 1px solid #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.channel-list::-webkit-scrollbar { width: 4px; }
+.channel-list::-webkit-scrollbar-track { background: #111; }
+.channel-list::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+
+.channel-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 16px;
+  border-bottom: 1px solid #1a1a1a;
+  transition: background 0.15s;
+}
+.channel-item:last-child { border-bottom: none; }
+.channel-item:hover { background: #141414; }
+
+.channel-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.channel-icon { font-size: 18px; }
+
+.channel-name { font-weight: 600; font-size: 13px; }
+.channel-id   { color: #444; font-size: 11px; margin-top: 2px; }
+
+.btn-remove {
+  background: none;
+  border: 1px solid #2a1a1a;
+  color: #ff4444;
+  border-radius: 8px;
+  padding: 5px 9px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.15s;
+}
+.btn-remove:hover { background: #2a1010; }
+
+.empty-list {
+  padding: 24px;
+  text-align: center;
+  color: #444;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.loading { padding: 24px; text-align: center; color: #333; }
+
+/* ── Manual add ─────────────────────────────────── */
+.manual-add { margin-top: 4px; }
+.manual-label { font-size: 12px; color: #444; margin-bottom: 10px; }
+
+.manual-row {
+  display: flex;
+  gap: 10px;
+}
+
+/* ── PIN form ───────────────────────────────────── */
+.pin-form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ── Shared text input ──────────────────────────── */
+.text-input {
+  flex: 1;
+  min-width: 0;
+  background: #181818;
+  border: 1.5px solid #252525;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.text-input:focus { border-color: #ff0000; }
+.text-input::placeholder { color: #333; }
+
+/* ── Buttons ────────────────────────────────────── */
+.btn-primary {
+  background: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.btn-primary:hover { background: #cc0000; }
+.btn-primary.sm { padding: 10px 18px; font-size: 13px; }
+
+.btn-danger {
+  background: #2a0a0a;
+  color: #ff6666;
+  border: 1px solid #3a1515;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-danger:hover { background: #3a1010; border-color: #552020; }
+
+/* ── Save messages ──────────────────────────────── */
+.save-msg {
+  font-size: 12px;
+  min-height: 18px;
+  margin-top: 10px;
+}
+.msg-ok  { color: #00c853; }
+.msg-err { color: #ff4444; }
