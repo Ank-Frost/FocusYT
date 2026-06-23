@@ -1,6 +1,6 @@
 # 🎯 FocusYT 
 
-**A Chrome extension that turns YouTube into a focused study tool.**
+**A Chrome extension that turns YouTube into a focused study tool.** (!!! vibe coded with Claude)
 
 Block distractions, whitelist study channels, cap your daily leisure time, and lock yourself out when you've had enough — like Regain, but for YouTube on desktop.
 
@@ -152,5 +152,4 @@ Pull requests are welcome! Some ideas for improvements:
 MIT — do whatever you want with it.
 
 ---
-!!! vibe coded with Claude
 *Built to solve a real problem: YouTube's algorithm is very good at its job, and willpower alone isn't enough. FocusYT puts a system in place so you don't have to rely on it.*
