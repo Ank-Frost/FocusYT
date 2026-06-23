@@ -1,4 +1,4 @@
-# 🎯 FocusYT
+# 🎯 FocusYT 
 
 **A Chrome extension that turns YouTube into a focused study tool.**
 
@@ -152,5 +152,5 @@ Pull requests are welcome! Some ideas for improvements:
 MIT — do whatever you want with it.
 
 ---
-
+!!! vibe coded with Claude
 *Built to solve a real problem: YouTube's algorithm is very good at its job, and willpower alone isn't enough. FocusYT puts a system in place so you don't have to rely on it.*
